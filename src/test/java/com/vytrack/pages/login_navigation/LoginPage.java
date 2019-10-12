@@ -1,5 +1,6 @@
 package com.vytrack.pages.login_navigation;
 
+import com.vytrack.utils.ConfigurationReader;
 import com.vytrack.utils.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -53,6 +54,11 @@ public class LoginPage {
        wait.until(ExpectedConditions.elementToBeClickable(rememberMeElement));
        if (!rememberMeElement.isSelected()){
             rememberMeElement.click();}
+    }
+
+    public void goToLadingPAge(){
+        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().get(ConfigurationReader.getProperty("url2"));
     }
 
 
